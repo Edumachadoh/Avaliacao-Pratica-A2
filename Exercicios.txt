@@ -17,13 +17,24 @@ Problema:
 
 - Deve ser possível trocar de algoritmo de acordo com a necessidade de negócios
 
-Strategy
-
 Restrições:
 
 - O cliente deve poder mudar de algoritmo sem conhecer os detalhes de implementação
 
 - Implemente pelo menos 3 algoritmos diferentes com cálculos dummy (podem ser mensagens de texto) distintos
+
+    RESOLUÇÃO:
+Padrão Strategy:
+- Deve ser possível trocar de estratégia sem parar o algoritmo
+- A primeira restrição diz que é necessário uma interface (estratégia) que será acessada pelos algoritmos
+- Lembrar de mudar o contexto durante a execução do algoritmo
+- 3 algoritmos diferentes
+- Perguntar Escobar: posso usar os mesmos parâmetros para os algoritmos? 
+
+Arquivos:
+- Interface Strategy: contém a estratégia dos algorismos 
+- Classe dos 3 algoritmos: herdam a interface Strategy
+- Classe Context: vai usar a referência da interface Strategy, acessa ela
 
 
 
@@ -46,6 +57,9 @@ Restrições:
 
 - O legado exige codificação específica para moedas (USD=1, EUR=2, BRL=3)
 
+    RESOLUÇÃO 
+Padrão Adapter
+- Adapter usa uma classe legada (API, etc) e uam classe adapter para cada classe legada, ou seja, terão transações Pix, Cartao, Boleto, etc e uma adapter PixAdapter, CartaoAdapter, BoletoAdapter que serão acessados por uma interface ProcessaarPagamento 
 
 
 QUESTÃO 3 (0,25):
